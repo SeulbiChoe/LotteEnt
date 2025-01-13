@@ -14,12 +14,13 @@ const Mobile = ({ children }) => {
 };
 const Header = () => {
   return (
-    <header>
-      <Desktop>Desktop or laptop</Desktop>
-      <Tablet>Tablet</Tablet>
+    <header className="header">
       <Mobile>
         <div>children mobile</div>
       </Mobile>
+
+      {/* <Tablet>Tablet</Tablet> */}
+      <Desktop>Desktop or laptop</Desktop>
     </header>
   );
 };
