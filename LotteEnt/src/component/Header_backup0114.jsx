@@ -1,67 +1,49 @@
 import {useState} from "react";
 import NavContainer from "./NavContainer";
-import {useMediaQuery} from "react-responsive";
-// import MediaQuery from "../mediaQuery";
+import HeaderMediaQuery from "../mediaQuery";
 
 const Header = () => {
-  const isMobile = useMediaQuery({maxWidth: 1023});
   const [isOpen, setIsOpen] = useState(false);
+
   const handleToggle = () => {
     setIsOpen(!isOpen);
   };
 
   return (
     <header className="header">
-      {isMobile ? (
-        <>
-          <div className="mo-nav-container">
-            <h1 className="logo">
-              <a href=""></a>
-            </h1>
-            <button
-              style={{display: isOpen ? "none" : "block"}}
-              className="menu-open-btn"
-              onClick={handleToggle}>
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-            <button
-              style={{display: isOpen ? "block" : "none"}}
-              className="menu-close-btn"
-              onClick={handleToggle}>
-              <span></span>
-              <span></span>
-            </button>
-          </div>
+      <HeaderMediaQuery.HeaderMobile>
+        <div className="mo-nav-container">
+          <h1 className="logo">
+            <a href=""></a>
+          </h1>
+          <button
+            style={{display: isOpen ? "none" : "block"}}
+            className="menu-open-btn"
+            onClick={handleToggle}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <button
+            style={{display: isOpen ? "block" : "none"}}
+            className="menu-close-btn"
+            onClick={handleToggle}>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
 
-          <nav className={"mo-gnb " + (isOpen ? "active" : "")}>
-            <div className="mo-gnb-container">
-              <NavContainer />
-            </div>
-            <div className="sns-wrap">
-              <ul>
-                <li>
-                  <a href=""></a>
-                </li>
-                <li>
-                  <a href=""></a>
-                </li>
-                <li>
-                  <a href=""></a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </>
-      ) : (
+        <nav className={"mo-gnb " + (isOpen ? "active" : "")}>
+          <NavContainer />
+        </nav>
+      </HeaderMediaQuery.HeaderMobile>
+      <HeaderMediaQuery.HeaderDesktop>
         <div className="dt-nav-container">
-          <nav className="dt-gnb">
+          <div className="dt-gnb">
             <h1 className="logo">
               <a href=""></a>
             </h1>
-            <NavContainer />
-            {/* <ul className="dt-gnb-wrap">
+            <ul className="dt-gnb-wrap">
               <li>
                 <button className="main-menu-item">Movies</button>
                 <div className="sub-menu-wrap">
@@ -114,10 +96,10 @@ const Header = () => {
                   </ul>
                 </div>
               </li>
-            </ul> */}
-          </nav>
+            </ul>
+          </div>
         </div>
-      )}
+      </HeaderMediaQuery.HeaderDesktop>
     </header>
   );
 };
