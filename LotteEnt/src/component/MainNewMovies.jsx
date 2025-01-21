@@ -49,7 +49,7 @@ const MainNewMovies = () => {
   useEffect(() => {
     getMovies();
     posterWrapRef.current.style.transform = `translateX(-${
-      currentSlide * 188
+      currentSlide * 192
     }px)`;
   }, [currentSlide]);
   return (

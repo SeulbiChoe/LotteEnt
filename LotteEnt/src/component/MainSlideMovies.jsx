@@ -1,4 +1,4 @@
-import {useState, useEffect} from "react";
+import {useState, useEffect, useRef} from "react";
 
 const MainSlideMovies = () => {
   const KEY = "c419c959580ade242b9ff7e6a664f241";
@@ -10,16 +10,37 @@ const MainSlideMovies = () => {
   const getMovies = async () => {
     const json = await (
       await fetch(`${URL}upcoming?language=ko-KO&api_key=${KEY}`)
-    ).json(); //axios 쓰면 json으로 변환하는 과정이 생략된다고 함
+    ).json();
     let moviesList = json.results;
-    let cutList = moviesList.splice(0, 5); // tmdb는 기본적으로 20개의 리스트를 주기 떄문에 10까지 배열 크기 다시 저장
-
+    let cutList = moviesList.splice(0, 5);
     setMovies(cutList);
-    // console.log(cutList);
   };
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+  let slideList = document.querySelectorAll(".slide-item");
+  let slideWrapRef = useRef(null);
+
+  const nextSlide = () => {
+    setCurrentSlide(
+      currentSlide === slideList.length - 1 ? currentSlide : currentSlide + 1
+    );
+    console.log(currentSlide);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide(currentSlide === 0 ? 0 : currentSlide - 1);
+  };
+
   useEffect(() => {
     getMovies();
-  }, []);
+    // const interval = setInterval(() => {
+    //   nextSlide();
+    // }, 4000);
+
+    slideWrapRef.current.style.transform = `translateX(-${
+      currentSlide * 100
+    }%)`;
+  }, [currentSlide]);
   return (
     <section className="main-slide-movies">
       <div className="slide-movies-top">
@@ -29,10 +50,15 @@ const MainSlideMovies = () => {
         </h2>
       </div>
       <div className="slide-movies-bottom">
-        <div className="slide-wrap">
-          {movies.map((movie) => (
-            <a href="" key={movie.id}>
-              <div className="slide-item">
+        <div className="slide-wrap" ref={slideWrapRef}>
+          {movies.map((movie, idx) => (
+            <a
+              href=""
+              key={movie.id}
+              className={
+                "slide-item " + (currentSlide === idx ? "active" : "")
+              }>
+              <div>
                 <img
                   src={"https://image.tmdb.org/t/p/w1280" + movie.backdrop_path}
                   alt={movie.title}
@@ -49,10 +75,10 @@ const MainSlideMovies = () => {
           <span></span>
         </div>
         <div className="btn-wrap">
-          <button className="prev-btn">
+          <button className="prev-btn" onClick={prevSlide}>
             <span></span>
           </button>
-          <button className="next-btn">
+          <button className="next-btn" onClick={nextSlide}>
             <span></span>
           </button>
         </div>
