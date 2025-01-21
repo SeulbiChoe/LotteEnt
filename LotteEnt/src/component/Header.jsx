@@ -1,8 +1,12 @@
 import {useState} from "react";
 import NavContainer from "./NavContainer";
 import {useMediaQuery} from "react-responsive";
-// import MediaQuery from "../mediaQuery";
-
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {
+  faInstagram,
+  faYoutube,
+  faFacebook,
+} from "@fortawesome/free-brands-svg-icons";
 const Header = () => {
   const isMobile = useMediaQuery({maxWidth: 1023});
   const [isOpen, setIsOpen] = useState(false);
@@ -42,13 +46,35 @@ const Header = () => {
             <div className="sns-wrap">
               <ul>
                 <li>
-                  <a href=""></a>
+                  <a
+                    href="https://www.instagram.com/lotteent.movie/"
+                    target="_blank">
+                    <FontAwesomeIcon
+                      icon={faInstagram}
+                      size="xl"
+                      style={{color: "#fff"}}
+                    />
+                  </a>
                 </li>
                 <li>
-                  <a href=""></a>
+                  <a href="https://www.youtube.com/@lotteent" target="_blank">
+                    <FontAwesomeIcon
+                      icon={faYoutube}
+                      size="xl"
+                      style={{color: "#fff"}}
+                    />
+                  </a>
                 </li>
                 <li>
-                  <a href=""></a>
+                  <a
+                    href="https://www.facebook.com/lotteent.movie/?locale=ko_KR"
+                    target="_blank">
+                    <FontAwesomeIcon
+                      icon={faFacebook}
+                      size="xl"
+                      style={{color: "#fff"}}
+                    />
+                  </a>
                 </li>
               </ul>
             </div>
@@ -61,60 +87,6 @@ const Header = () => {
               <a href=""></a>
             </h1>
             <NavContainer />
-            {/* <ul className="dt-gnb-wrap">
-              <li>
-                <button className="main-menu-item">Movies</button>
-                <div className="sub-menu-wrap">
-                  <div className="sub-menu-top">
-                    <span className="sub-menu-title">Title</span>
-                    <button className="menu-close-btn">
-                      <span></span>
-                      <span></span>
-                    </button>
-                  </div>
-                  <ul>
-                    <li>
-                      <a href="">movie1</a>
-                    </li>
-                    <li>
-                      <a href="">movie1</a>
-                    </li>
-                    <li>
-                      <a href="">movie1</a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li>
-                <a href="">News</a>
-              </li>
-              <li>
-                <button className="main-menu-item">Company</button>
-                <div className="sub-menu-wrap">
-                  <div className="sub-menu-top">
-                    <span className="sub-menu-title">Title</span>
-                    <button className="menu-close-btn">
-                      <span></span>
-                      <span></span>
-                    </button>
-                  </div>
-                  <ul>
-                    <li>
-                      <a href="">company1</a>
-                    </li>
-                    <li>
-                      <a href="">movie1</a>
-                    </li>
-                    <li>
-                      <a href="">movie1</a>
-                    </li>
-                    <li>
-                      <a href="">movie1</a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-            </ul> */}
           </nav>
         </div>
       )}
