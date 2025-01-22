@@ -1,4 +1,6 @@
 import {useState, useEffect, useRef} from "react";
+import {useMediaQuery} from "react-responsive";
+
 // import {preinit} from "react-dom";
 
 const MainNewMovies = () => {
@@ -15,6 +17,7 @@ const MainNewMovies = () => {
     let moviesList = json.results;
     let cutList = moviesList.splice(0, 10); // tmdb는 기본적으로 20개의 리스트를 주기 떄문에 10까지 배열 크기 다시 저장
     setMovies(cutList);
+    console.log(cutList);
   };
 
   //다음 버튼 클릭 시, 슬라이드
@@ -40,6 +43,9 @@ const MainNewMovies = () => {
       currentSlide * 192
     }px)`;
   }, [currentSlide]);
+
+  const isMobile = useMediaQuery({maxWidth: 1023});
+
   return (
     <section className="main-latest-movies">
       <div className="bg-black"></div>
@@ -70,8 +76,21 @@ const MainNewMovies = () => {
                   alt={movie.title}
                 />
                 <div className="desc">
-                  <span>{movie.title}</span>
-                  <span>{movie.release_date}</span>
+                  {isMobile ? (
+                    <>
+                      <span>{movie.title}</span>
+                      <span>{movie.release_date}</span>
+                    </>
+                  ) : (
+                    <>
+                      <span className="movie-title">{movie.title}</span>
+                      <div>
+                        <span>{movie.original_title}</span>
+                        <span>평점 : {movie.vote_average}</span>
+                        <span>{movie.release_date}</span>
+                      </div>
+                    </>
+                  )}
                 </div>
               </div>
               // <Movie

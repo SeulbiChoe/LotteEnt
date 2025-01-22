@@ -241,8 +241,7 @@
     padding-bottom: 100px;
   }
   .main-slide-movies .slide-wrap .movie-title {
-    font-size: 24px;
-    font-weight: 800;
+    font-size: 30px;
     padding: 28px 0;
     width: 25%;
   }
@@ -277,10 +276,39 @@
   .main-latest-movies {
     padding-top: 30px;
   }
+  .main-latest-movies h2 {
+    font-size: 30px;
+  }
   .main-latest-movies .latest-poster-wrap {
     grid-template-columns: repeat(5, 300px);
   }
   .main-latest-movies .latest-poster {
     height: 410px;
+  }
+  .main-latest-movies .latest-poster img {
+    transition: all 0.2s ease-out;
+  }
+  .main-latest-movies .latest-poster:hover img {
+    transform: scale(1.1);
+  }
+  .main-latest-movies .latest-poster .desc {
+    /* height: 150px; */
+    height: auto;
+    padding: 20px;
+    position: absolute;
+    bottom: -80px;
+    transition: all 0.3s ease-out;
+  }
+  .main-latest-movies .latest-poster .desc span {
+    display: block;
+    line-height: 20px;
+  }
+  .main-latest-movies .latest-poster:hover .desc {
+    bottom: 0;
+  }
+  .main-latest-movies .latest-poster .desc .movie-title {
+    font-size: 22px;
+    font-weight: 800;
+    padding-bottom: 20px;
   }
 }
