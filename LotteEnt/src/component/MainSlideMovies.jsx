@@ -19,16 +19,23 @@ const MainSlideMovies = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   let slideList = document.querySelectorAll(".slide-item");
   let slideWrapRef = useRef(null);
+  // let imgIdx = slideList.length - 1;
 
   const nextSlide = () => {
     setCurrentSlide(
-      currentSlide === slideList.length - 1 ? currentSlide : currentSlide + 1
+      currentSlide === slideList.length - 1
+        ? 0
+        : (currentSlide) => currentSlide + 1
     );
-    console.log(currentSlide);
   };
+  console.log(currentSlide);
 
   const prevSlide = () => {
-    setCurrentSlide(currentSlide === 0 ? 0 : currentSlide - 1);
+    setCurrentSlide((currentSlide) =>
+      currentSlide === 0
+        ? currentSlide + slideList.length - 1
+        : currentSlide - 1
+    );
   };
 
   useEffect(() => {

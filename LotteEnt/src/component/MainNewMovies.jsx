@@ -15,35 +15,23 @@ const MainNewMovies = () => {
     let moviesList = json.results;
     let cutList = moviesList.splice(0, 10); // tmdb는 기본적으로 20개의 리스트를 주기 떄문에 10까지 배열 크기 다시 저장
     setMovies(cutList);
-    // console.log(cutList);
   };
 
   //다음 버튼 클릭 시, 슬라이드
   const [currentSlide, setCurrentSlide] = useState(0);
   let posterList = document.querySelectorAll(".latest-poster");
-  // let posterWrap = document.querySelector(".latest-poster-wrap");
   let posterWrapRef = useRef(null);
 
   const nextSlide = () => {
-    // setCurrentSlide(() => {
-    //   // console.log(prevIndex);
-    //   currentSlide == posterList.length - 1 ? 0 : currentSlide + 1;
-    //   console.log(currentSlide);
-    //   posterWrap.style.transform = `translateX(-${currentSlide * 200}px)`;
-    // });
     setCurrentSlide(
       currentSlide === posterList.length / 2 - 1
         ? currentSlide
         : currentSlide + 1
     );
-    // posterWrap.style.transform = `translateX(-${currentSlide * 190}px)`;
-    console.log(currentSlide);
   };
 
   const prevSlide = () => {
     setCurrentSlide(currentSlide === 0 ? 0 : currentSlide - 1);
-    // posterWrap.style.transform = `translateX(-${currentSlide * 190}px)`;
-    console.log(currentSlide);
   };
 
   useEffect(() => {
