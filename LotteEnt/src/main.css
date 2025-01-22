@@ -181,7 +181,14 @@
 .main-latest-movies .latest-poster .desc span:last-child {
   color: #aaa;
 }
-
+/* MainLatestNews */
+.main-latest-news {
+  width: 100%;
+  padding: 0 24px;
+}
+.main-latest-news h2 {
+  font-size: 22px;
+}
 @media (min-width: 768px) {
   .slide-movies-top {
     padding: 78px 48px 48px;
