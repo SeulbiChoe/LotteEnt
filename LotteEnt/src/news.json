@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Oscar Moss",
+    "date": "Sep 27, 2024",
+    "news_title": "ligula tortor, dictum eu, placerat eget, venenatis a, magna. Lorem",
+    "number": 1,
+    "news_contents": "dolor. Nulla semper tellus id nunc interdum feugiat. Sed nec metus facilisis lorem tristique aliquet. Phasellus fermentum convallis ligula. Donec luctus aliquet odio. Etiam ligula tortor, dictum eu, placerat eget, venenatis a, magna. Lorem ipsum dolor sit amet, consectetuer adipiscing"
+  },
+  {
+    "name": "Angela Burks",
+    "date": "Mar 21, 2024",
+    "news_title": "dui, nec tempus mauris erat eget ipsum. Suspendisse sagittis. Nullam",
+    "number": 2,
+    "news_contents": "lorem vitae odio sagittis semper. Nam tempor diam dictum sapien. Aenean massa. Integer vitae nibh. Donec est mauris, rhoncus id, mollis nec, cursus a, enim. Suspendisse aliquet, sem ut cursus luctus, ipsum leo elementum sem, vitae aliquam eros turpis non"
+  },
+  {
+    "name": "Zorita Shelton",
+    "date": "Oct 31, 2025",
+    "news_title": "Maecenas mi felis, adipiscing fringilla, porttitor vulputate, posuere vulputate, lacus.",
+    "number": 3,
+    "news_contents": "tincidunt. Donec vitae erat vel pede blandit congue. In scelerisque scelerisque dui. Suspendisse ac metus vitae velit egestas lacinia. Sed congue, elit sed consequat auctor, nunc nulla vulputate dui, nec tempus mauris erat eget ipsum. Suspendisse sagittis. Nullam vitae diam."
+  },
+  {
+    "name": "Cheyenne Robles",
+    "date": "Dec 18, 2025",
+    "news_title": "eu turpis. Nulla aliquet. Proin velit. Sed malesuada augue ut",
+    "number": 4,
+    "news_contents": "faucibus. Morbi vehicula. Pellentesque tincidunt tempus risus. Donec egestas. Duis ac arcu. Nunc mauris. Morbi non sapien molestie orci tincidunt adipiscing. Mauris molestie pharetra nibh. Aliquam ornare, libero at auctor ullamcorper, nisl arcu iaculis enim, sit amet ornare lectus justo"
+  },
+  {
+    "name": "Brent Buckley",
+    "date": "Mar 23, 2025",
+    "news_title": "in, hendrerit consectetuer, cursus et, magna. Praesent interdum ligula eu",
+    "number": 5,
+    "news_contents": "bibendum fermentum metus. Aenean sed pede nec ante blandit viverra. Donec tempus, lorem fringilla ornare placerat, orci lacus vestibulum lorem, sit amet ultricies sem magna nec quam. Curabitur vel lectus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur"
+  }
+]
