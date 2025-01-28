@@ -70,10 +70,10 @@ const MainSlideMovies = () => {
                   src={"https://image.tmdb.org/t/p/w1280" + movie.backdrop_path}
                   alt={movie.title}
                 />
-                <div className="slide-txt">
-                  <p className="movie-title">{movie.title}</p>
-                  <p className="movie-overview">{movie.overview}</p>
-                </div>
+              </div>
+              <div className="slide-txt">
+                <p className="movie-title">{movie.title}</p>
+                <p className="movie-overview">{movie.overview}</p>
               </div>
             </a>
           ))}
