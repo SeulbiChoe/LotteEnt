@@ -4,6 +4,7 @@ import "./App.css";
 import "./header.css";
 import "./main.css";
 import Main from "./component/Main";
+import {Routes, Route, Link} from "react-router-dom";
 
 function App() {
   const [count, setCount] = useState(0);
